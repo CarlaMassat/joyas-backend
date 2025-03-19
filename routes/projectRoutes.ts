@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { createCategory, deleteCategory, getCategories, updateCategory } from "../controllers/categoryController";
 import { createProduct, deleteProduct, getProducts, updateProduct } from "../controllers/productController";
+import { createService, getServices } from '../controllers/serviceController';
 
 const router = Router()
 
@@ -9,11 +10,12 @@ router.put('/categories/:id', updateCategory)
 router.delete('/categories/:id', deleteCategory)
 router.get('/categories', getCategories)
 
-
-
 router.post('/products', createProduct)
 router.put('/products/:id', updateProduct)
 router.delete('/products/:id', deleteProduct)
 router.get('/products', getProducts)
+
+router.post('/services', createService)
+router.get('/services', getServices )
 
 export default router

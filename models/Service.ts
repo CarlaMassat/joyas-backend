@@ -3,7 +3,6 @@ import { Schema, model } from "mongoose";
 interface IService {
   title: String;
   description: String;
-  link: String;
   delay: number;
 }
 
@@ -17,10 +16,6 @@ const ServiceSchema: Schema = new Schema<IService>({
     required: true,
   },
 
-  link: {
-    type: String,
-    default: "",
-  },
   delay: {
     type: Number,
     default: 0,

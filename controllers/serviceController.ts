@@ -8,8 +8,8 @@ export const createService = async (
 ): Promise<any> => {
 
     try {
-      const {title, description, icon, link, delay } = req.body;
-      const newService = new Service ({title, description, link, delay});
+      const {title, description,delay } = req.body;
+      const newService = new Service ({title, description,delay});
       await newService.save();
       res.status(201).json(newService);
         

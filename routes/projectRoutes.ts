@@ -2,6 +2,7 @@ import { Router } from "express";
 import { createCategory, deleteCategory, getCategories, updateCategory } from "../controllers/categoryController";
 import { createProduct, deleteProduct, getProducts, updateProduct } from "../controllers/productController";
 import { createService, getServices } from '../controllers/serviceController';
+import { createBanner, getBanners } from '../controllers/bannerController';
 
 const router = Router()
 
@@ -17,5 +18,8 @@ router.get('/products', getProducts)
 
 router.post('/services', createService)
 router.get('/services', getServices )
+
+router.post('/banners', createBanner)
+router.get('/banners', getBanners )
 
 export default router

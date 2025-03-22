@@ -10,8 +10,8 @@ export const createReview = async (
 
     try {
         
-        const {description, delay} = req.body;
-        const newReview = new Review({description, delay});
+        const {title, description, delay} = req.body;
+        const newReview = new Review({title, description, delay});
         await newReview.save();
         res.status(201).json(newReview);
 

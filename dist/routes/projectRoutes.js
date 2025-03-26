@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const categoryController_1 = require("../controllers/categoryController");
+const productController_1 = require("../controllers/productController");
+const serviceController_1 = require("../controllers/serviceController");
+const bannerController_1 = require("../controllers/bannerController");
+const reviewController_1 = require("../controllers/reviewController");
+const router = (0, express_1.Router)();
+router.post('/categories', categoryController_1.createCategory);
+router.put('/categories/:id', categoryController_1.updateCategory);
+router.delete('/categories/:id', categoryController_1.deleteCategory);
+router.get('/categories', categoryController_1.getCategories);
+router.post('/products', productController_1.createProduct);
+router.put('/products/:id', productController_1.updateProduct);
+router.delete('/products/:id', productController_1.deleteProduct);
+router.get('/products', productController_1.getProducts);
+router.post('/services', serviceController_1.createService);
+router.get('/services', serviceController_1.getServices);
+router.post('/banners', bannerController_1.createBanner);
+router.get('/banners', bannerController_1.getBanners);
+router.post('/reviews', reviewController_1.createReview);
+router.get('/reviews', reviewController_1.getReviews);
+exports.default = router;
+//# sourceMappingURL=projectRoutes.js.map

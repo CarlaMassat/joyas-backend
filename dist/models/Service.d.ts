@@ -1,6 +1,6 @@
 interface IService {
-    title: String;
-    description: String;
+    title: string;
+    description: string;
     delay: number;
 }
 declare const Service: import("mongoose").Model<IService, {}, {}, {}, import("mongoose").Document<unknown, {}, IService> & IService & {

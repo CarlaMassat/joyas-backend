@@ -1,6 +1,6 @@
 interface IReview {
-    title: String;
-    description: String;
+    title: string;
+    description: string;
     delay: number;
 }
 declare const Review: import("mongoose").Model<IReview, {}, {}, {}, import("mongoose").Document<unknown, {}, IReview> & IReview & {

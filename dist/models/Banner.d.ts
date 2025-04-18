@@ -1,7 +1,7 @@
 interface IBanner {
-    title: String;
-    subtitle: String;
-    link: String;
+    title: string;
+    subtitle: string;
+    link: string;
 }
 declare const Banner: import("mongoose").Model<IBanner, {}, {}, {}, import("mongoose").Document<unknown, {}, IBanner> & IBanner & {
     _id: import("mongoose").Types.ObjectId;

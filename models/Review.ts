@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
 
 interface IReview {
-  title: String,
-  description: String;
+  title: string,
+  description: string;
   delay: number;
 }
 

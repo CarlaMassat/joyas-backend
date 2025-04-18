@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
 
 interface IService {
-  title: String;
-  description: String;
+  title: string;
+  description: string;
   delay: number;
 }
 

@@ -4,13 +4,22 @@ import { createProduct, deleteProduct, getProducts, updateProduct } from "../con
 import { createService, getServices } from '../controllers/serviceController';
 import { createBanner, getBanners } from '../controllers/bannerController';
 import { createReview, getReviews } from '../controllers/reviewController';
+import { authenticate } from '../middleware/auth';
+import { createCard, getCards } from '../controllers/cardController';
 
 const router = Router()
+
+router.get('/services', getServices)
+router.get('/banners', getBanners)
+router.get('/reviews', getReviews)
+router.get('/categories',getCategories)
+
+router.use(authenticate)
 
 router.post('/categories', createCategory)
 router.put('/categories/:id', updateCategory)
 router.delete('/categories/:id', deleteCategory)
-router.get('/categories', getCategories)
+
 
 router.post('/products', createProduct)
 router.put('/products/:id', updateProduct)
@@ -18,12 +27,14 @@ router.delete('/products/:id', deleteProduct)
 router.get('/products', getProducts)
 
 router.post('/services', createService)
-router.get('/services', getServices )
+
 
 router.post('/banners', createBanner)
-router.get('/banners', getBanners )
+
 
 router.post('/reviews', createReview)
-router.get('/reviews', getReviews )
+
+router.post('/cards', createCard)
+router.get('/cards', getCards)
 
 export default router

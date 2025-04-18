@@ -1,9 +1,9 @@
 import {Schema, model} from 'mongoose';
 
 interface IBanner {
-    title: String,
-    subtitle: String,
-    link: String
+    title: string,
+    subtitle: string,
+    link: string
 }
 
 

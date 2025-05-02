@@ -20,7 +20,7 @@ const ProductSchema: Schema = new Schema<IProduct>({
 
     category: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category',  
+        ref: 'AdminCategory',  
         required: true
     },
 
@@ -49,7 +49,12 @@ const ProductSchema: Schema = new Schema<IProduct>({
     },
 
 
-})
+},
+{
+    timestamps: true,
+}
+
+)
 const Product = model<IProduct>('Product', ProductSchema)
 
 export default Product

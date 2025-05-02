@@ -1,7 +1,7 @@
 
 import { Request, Response } from "express";
 import Product from "../models/Product";
-import Category from "../models/Category";
+import AdminCategory from "../models/AdminCategory";
 
 export const createProduct = async (
   req: Request,
@@ -10,7 +10,7 @@ export const createProduct = async (
   try {
     const { name, category, description, price, stock, image } = req.body;
 
-    const existingCategory = await Category.findOne({ name: category });
+    const existingCategory = await AdminCategory.findById(category);
 
     if (!existingCategory) {
       return res.status(400).json({ message: 'La categoria no existe' });
@@ -65,7 +65,7 @@ try {
   }
 
   if (category) {
-    const existingCategory = await Category.findOne({ name: category });
+    const existingCategory = await AdminCategory.findById(category);
     if (!existingCategory) {
       return res.status(400).json({ message: "La categoría no existe" });
     }

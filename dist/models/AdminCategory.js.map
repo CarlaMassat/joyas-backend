@@ -1,0 +1,1 @@
+{"version":3,"file":"AdminCategory.js","sourceRoot":"","sources":["../../models/AdminCategory.ts"],"names":[],"mappings":";;AAAA,uCAAyC;AAMzC,MAAM,mBAAmB,GAAW,IAAI,iBAAM,CAAiB;IAC7D,IAAI,EAAE;QACJ,IAAI,EAAE,MAAM;QACZ,QAAQ,EAAE,IAAI;QACd,MAAM,EAAE,IAAI;KACb;CACF,CAAC,CAAC;AAEH,MAAM,aAAa,GAAG,IAAA,gBAAK,EACzB,eAAe,EACf,mBAAmB,CACpB,CAAC;AACF,kBAAe,aAAa,CAAC"}

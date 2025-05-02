@@ -12,7 +12,7 @@ const ProductSchema = new mongoose_2.Schema({
     },
     category: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: 'Category',
+        ref: 'AdminCategory',
         required: true
     },
     description: {
@@ -30,6 +30,8 @@ const ProductSchema = new mongoose_2.Schema({
     image: {
         type: String,
     },
+}, {
+    timestamps: true,
 });
 const Product = (0, mongoose_2.model)('Product', ProductSchema);
 exports.default = Product;

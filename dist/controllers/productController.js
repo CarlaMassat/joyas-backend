@@ -5,11 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteProduct = exports.updateProduct = exports.getProducts = exports.createProduct = void 0;
 const Product_1 = __importDefault(require("../models/Product"));
-const Category_1 = __importDefault(require("../models/Category"));
+const AdminCategory_1 = __importDefault(require("../models/AdminCategory"));
 const createProduct = async (req, res) => {
     try {
         const { name, category, description, price, stock, image } = req.body;
-        const existingCategory = await Category_1.default.findOne({ name: category });
+        const existingCategory = await AdminCategory_1.default.findById(category);
         if (!existingCategory) {
             return res.status(400).json({ message: 'La categoria no existe' });
         }
@@ -51,7 +51,7 @@ const updateProduct = async (req, res) => {
             return res.status(404).json({ message: "Producto no encontrado" });
         }
         if (category) {
-            const existingCategory = await Category_1.default.findOne({ name: category });
+            const existingCategory = await AdminCategory_1.default.findById(category);
             if (!existingCategory) {
                 return res.status(400).json({ message: "La categoría no existe" });
             }

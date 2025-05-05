@@ -8,7 +8,7 @@ export const createProduct = async (
   res: Response
 ): Promise<any> => {
   try {
-    const { name, category, description, price, stock, image } = req.body;
+    const { name, category, description, price, stock, image, createdAt } = req.body;
 
     const existingCategory = await AdminCategory.findById(category);
 
@@ -23,6 +23,7 @@ export const createProduct = async (
       price,
       stock,
       image,
+      createdAt: createdAt ? new Date(createdAt) : new Date(),
     });
 
     await newProduct.save();

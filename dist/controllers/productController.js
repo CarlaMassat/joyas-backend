@@ -8,7 +8,7 @@ const Product_1 = __importDefault(require("../models/Product"));
 const AdminCategory_1 = __importDefault(require("../models/AdminCategory"));
 const createProduct = async (req, res) => {
     try {
-        const { name, category, description, price, stock, image } = req.body;
+        const { name, category, description, price, stock, image, createdAt } = req.body;
         const existingCategory = await AdminCategory_1.default.findById(category);
         if (!existingCategory) {
             return res.status(400).json({ message: 'La categoria no existe' });
@@ -20,6 +20,7 @@ const createProduct = async (req, res) => {
             price,
             stock,
             image,
+            createdAt: createdAt ? new Date(createdAt) : new Date(),
         });
         await newProduct.save();
         const categoryProduct = await Product_1.default.findById(newProduct._id).populate('category', 'name -_id');
